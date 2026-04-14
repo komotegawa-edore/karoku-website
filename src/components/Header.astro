@@ -1,6 +1,4 @@
 ---
-const currentPath = Astro.url.pathname;
-
 const navItems = [
   { label: 'こだわり', href: '/#concept' },
   { label: 'メニュー', href: '/menu' },
@@ -9,13 +7,14 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
-  <div class="relative z-50 max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header" style="background-color: rgba(12, 12, 12, 0.9); backdrop-filter: blur(8px);">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
     <a href="/" class="flex items-center gap-3">
       <span class="font-serif text-xl tracking-[0.15em]">華鹿</span>
       <span class="text-text-muted text-xs tracking-[0.2em] hidden sm:inline">KAROKU</span>
     </a>
 
+    <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-8">
       {navItems.map((item) => (
         <a
@@ -27,80 +26,72 @@ const navItems = [
       ))}
     </nav>
 
+    <!-- Mobile menu button -->
     <button
-      class="md:hidden flex flex-col gap-1.5 p-2"
+      class="md:hidden flex flex-col gap-[6px] p-2"
       id="menu-toggle"
       aria-label="メニューを開く"
     >
-      <span class="block w-6 h-px bg-text transition-all duration-300" id="bar1"></span>
-      <span class="block w-6 h-px bg-text transition-all duration-300" id="bar2"></span>
-      <span class="block w-4 h-px bg-text transition-all duration-300 ml-auto" id="bar3"></span>
+      <span class="block w-6 h-[2px] bg-text transition-transform duration-300" id="bar1"></span>
+      <span class="block w-6 h-[2px] bg-text transition-opacity duration-300" id="bar2"></span>
+      <span class="block w-6 h-[2px] bg-text transition-transform duration-300" id="bar3"></span>
     </button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div class="md:hidden fixed inset-0 z-40 hidden" id="mobile-menu" style="background-color: rgba(12, 12, 12, 0.95); backdrop-filter: blur(4px);">
-    <div class="flex flex-col items-center justify-center h-full gap-8">
+  <!-- Mobile dropdown menu -->
+  <nav class="md:hidden overflow-hidden transition-all duration-300" id="mobile-menu" style="max-height: 0; border-top: 1px solid transparent;">
+    <div class="flex flex-col py-4" style="background-color: rgba(12, 12, 12, 0.95);">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="text-lg tracking-[0.2em] text-text-muted hover:text-accent transition-colors duration-300 mobile-nav-link"
+          class="mobile-nav-link px-6 py-3 text-sm tracking-[0.15em] text-text-muted hover:text-accent transition-colors duration-300"
         >
           {item.label}
         </a>
       ))}
     </div>
-  </div>
+  </nav>
 </header>
 
 <script>
-  const header = document.getElementById('header');
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const bar1 = document.getElementById('bar1');
   const bar2 = document.getElementById('bar2');
   const bar3 = document.getElementById('bar3');
-  let isMenuOpen = false;
+  let isOpen = false;
 
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    if (header) {
-      if (window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(12, 12, 12, 0.9)';
-        header.style.backdropFilter = 'blur(4px)';
-      } else {
-        header.style.backgroundColor = '';
-        header.style.backdropFilter = '';
-      }
+  function openMenu() {
+    isOpen = true;
+    if (mobileMenu) {
+      mobileMenu.style.maxHeight = '320px';
+      mobileMenu.style.borderTopColor = '#2a2520';
     }
-  });
+    bar1?.style.setProperty('transform', 'rotate(45deg) translateY(8px)');
+    bar2?.style.setProperty('opacity', '0');
+    bar3?.style.setProperty('transform', 'rotate(-45deg) translateY(-8px)');
+  }
 
-  // Mobile menu toggle
+  function closeMenu() {
+    isOpen = false;
+    if (mobileMenu) {
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.borderTopColor = 'transparent';
+    }
+    bar1?.style.setProperty('transform', '');
+    bar2?.style.setProperty('opacity', '');
+    bar3?.style.setProperty('transform', '');
+  }
+
   menuToggle?.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    mobileMenu?.classList.toggle('hidden');
-    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-
-    if (isMenuOpen) {
-      bar1?.classList.add('rotate-45', 'translate-y-[4px]');
-      bar2?.classList.add('opacity-0');
-      bar3?.classList.add('-rotate-45', '-translate-y-[6px]', 'w-6');
+    if (isOpen) {
+      closeMenu();
     } else {
-      bar1?.classList.remove('rotate-45', 'translate-y-[4px]');
-      bar2?.classList.remove('opacity-0');
-      bar3?.classList.remove('-rotate-45', '-translate-y-[6px]', 'w-6');
+      openMenu();
     }
   });
 
-  // Close mobile menu on link click
   document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      document.body.style.overflow = '';
-      isMenuOpen = false;
-      bar1?.classList.remove('rotate-45', 'translate-y-[4px]');
-      bar2?.classList.remove('opacity-0');
-      bar3?.classList.remove('-rotate-45', '-translate-y-[6px]', 'w-6');
-    });
+    link.addEventListener('click', () => closeMenu());
   });
 </script>
