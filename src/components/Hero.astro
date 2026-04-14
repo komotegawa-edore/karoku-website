@@ -18,7 +18,7 @@ const heroImages = [
 
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
   <!-- 3 images displayed side by side -->
-  <div class="absolute inset-0 flex">
+  <div class="absolute inset-0 flex flex-col md:flex-row">
     {heroImages.map((img) => (
       <div class="flex-1 h-full overflow-hidden">
         <img
