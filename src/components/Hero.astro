@@ -8,18 +8,31 @@ const {
   title = '食堂 華鹿',
   subtitle = '昼は定食、夜は酒場。\n奈良の旨いもんを、気軽に。'
 } = Astro.props;
+
+const heroImages = [
+  { src: '/images/other/kodawari-ryori.jpg', alt: 'こだわり料理と日本酒' },
+  { src: '/images/other/drink-bar-self.jpg', alt: '厳選の日本酒' },
+  { src: '/images/other/entrance-stairs.jpg', alt: '定食と肉と酒' },
+];
 ---
 
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background image -->
-  <img
-    src="/images/other/shun-sozai.jpg"
-    alt="食堂 華鹿の料理"
-    class="absolute inset-0 w-full h-full object-cover"
-  />
+  <!-- Slideshow images -->
+  {heroImages.map((img, i) => (
+    <img
+      src={img.src}
+      alt={img.alt}
+      class:list={[
+        'hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out',
+        i === 0 ? 'opacity-100' : 'opacity-0',
+      ]}
+      data-slide={i}
+    />
+  ))}
+
   <!-- Background overlay -->
-  <div class="absolute inset-0 bg-bg/60 z-10"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-bg/30 via-bg/40 to-bg z-10"></div>
+  <div class="absolute inset-0 z-10" style="background-color: rgba(12, 12, 12, 0.55);"></div>
+  <div class="absolute inset-0 z-10" style="background: linear-gradient(to bottom, rgba(12,12,12,0.2), rgba(12,12,12,0.35) 50%, rgba(12,12,12,0.95));"></div>
 
   <!-- Content -->
   <div class="relative z-20 text-center px-6">
@@ -41,3 +54,16 @@ const {
     <div class="w-px h-12 bg-gradient-to-b from-text-muted to-transparent"></div>
   </div>
 </section>
+
+<script>
+  const slides = document.querySelectorAll<HTMLImageElement>('.hero-slide');
+  if (slides.length > 1) {
+    let current = 0;
+    setInterval(() => {
+      const next = (current + 1) % slides.length;
+      slides[current].style.opacity = '0';
+      slides[next].style.opacity = '1';
+      current = next;
+    }, 5000);
+  }
+</script>
