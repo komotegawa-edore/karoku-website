@@ -1,0 +1,102 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: 'こだわり', href: '/#concept' },
+  { label: 'メニュー', href: '/menu' },
+  { label: 'アクセス', href: '/access' },
+  { label: 'ご予約', href: '/reservation' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3">
+      <span class="font-serif text-xl tracking-[0.15em]">華鹿</span>
+      <span class="text-text-muted text-xs tracking-[0.2em] hidden sm:inline">KAROKU</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-sm tracking-[0.15em] text-text-muted hover:text-accent transition-colors duration-300"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <button
+      class="md:hidden flex flex-col gap-1.5 p-2"
+      id="menu-toggle"
+      aria-label="メニューを開く"
+    >
+      <span class="block w-6 h-px bg-text transition-all duration-300" id="bar1"></span>
+      <span class="block w-6 h-px bg-text transition-all duration-300" id="bar2"></span>
+      <span class="block w-4 h-px bg-text transition-all duration-300 ml-auto" id="bar3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden fixed inset-0 bg-bg/95 backdrop-blur-sm z-40 hidden" id="mobile-menu">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-lg tracking-[0.2em] text-text-muted hover:text-accent transition-colors duration-300 mobile-nav-link"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('header');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+  let isMenuOpen = false;
+
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-bg/90', 'backdrop-blur-sm');
+    } else {
+      header?.classList.remove('bg-bg/90', 'backdrop-blur-sm');
+    }
+  });
+
+  // Mobile menu toggle
+  menuToggle?.addEventListener('click', () => {
+    isMenuOpen = !isMenuOpen;
+    mobileMenu?.classList.toggle('hidden');
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+
+    if (isMenuOpen) {
+      bar1?.classList.add('rotate-45', 'translate-y-[4px]');
+      bar2?.classList.add('opacity-0');
+      bar3?.classList.add('-rotate-45', '-translate-y-[6px]', 'w-6');
+    } else {
+      bar1?.classList.remove('rotate-45', 'translate-y-[4px]');
+      bar2?.classList.remove('opacity-0');
+      bar3?.classList.remove('-rotate-45', '-translate-y-[6px]', 'w-6');
+    }
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      document.body.style.overflow = '';
+      isMenuOpen = false;
+      bar1?.classList.remove('rotate-45', 'translate-y-[4px]');
+      bar2?.classList.remove('opacity-0');
+      bar3?.classList.remove('-rotate-45', '-translate-y-[6px]', 'w-6');
+    });
+  });
+</script>

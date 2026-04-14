@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MenuCard from '../components/MenuCard.astro';
+---
+
+<Layout title="メニュー | 食堂 華鹿 -KAROKU-">
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="section-title">Menu</p>
+      <h1 class="section-heading">メニュー</h1>
+      <div class="divider mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- Lunch Menu -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">ランチ定食</h2>
+        <p class="text-sm text-text-muted">11:30〜14:00</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <MenuCard
+          name="チキン南蛮定食"
+          price="¥600〜"
+          description="自家製タルタルソースたっぷり。ご飯・味噌汁付き"
+          tag="人気No.1"
+        />
+        <MenuCard
+          name="手作りハンバーグ定食"
+          price="¥1,000"
+          description="肉汁溢れるジューシーなハンバーグ。ご飯・味噌汁付き"
+        />
+        <MenuCard
+          name="トンネギ定食"
+          price="¥800"
+          description="豚バラ肉とネギの炒め物。ご飯・味噌汁付き"
+        />
+        <MenuCard
+          name="やきとり定食"
+          price="¥800"
+          description="炭火で焼き上げたやきとり。ご飯・味噌汁付き"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Dinner Menu -->
+  <section class="py-16 px-6 bg-bg-light">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">ディナー 一品料理</h2>
+        <p class="text-sm text-text-muted">17:00〜21:00（日・祝はランチのみ）</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <MenuCard
+          name="厚切り牛ハラミ"
+          price=""
+          description="厚切りで食べ応え抜群"
+        />
+        <MenuCard
+          name="チキン南蛮"
+          price="¥600"
+          description="自家製タルタルソース"
+        />
+        <MenuCard
+          name="トンネギ"
+          price="¥800"
+          description="豚バラ肉とネギの絶品おつまみ"
+        />
+        <MenuCard
+          name="やきとり"
+          price="¥800"
+          description="炭火焼きの香ばしいやきとり"
+        />
+        <MenuCard
+          name="手作りハンバーグ"
+          price="¥1,000"
+          description="ジューシーな手作りハンバーグ"
+        />
+        <MenuCard
+          name="ミニパフェ"
+          price=""
+          description="食後のデザートに"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Menu -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">コース</h2>
+        <p class="text-sm text-text-muted">ご予約はお電話にて承ります</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="space-y-6 fade-in">
+        <MenuCard
+          name="おまかせ料理コース A"
+          price="¥3,000"
+          description="料理のみのお手軽コース"
+        />
+        <MenuCard
+          name="おまかせ料理コース B"
+          price="¥4,000"
+          description="しっかり楽しめるコース"
+        />
+        <MenuCard
+          name="おまかせ料理コース C"
+          price="¥5,000"
+          description="華鹿の味を存分に堪能できる贅沢コース"
+        />
+        <MenuCard
+          name="セルフ飲み放題付きコース"
+          price="¥4,800〜"
+          description="おまかせ料理コース + セルフ飲み放題60分付き"
+          tag="おすすめ"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Drink -->
+  <section class="py-16 px-6 bg-bg-light">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">ドリンク</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="border border-border p-8 text-center fade-in">
+        <h3 class="font-serif text-lg tracking-[0.1em] mb-2">セルフ飲み放題</h3>
+        <p class="text-3xl font-serif text-accent tracking-[0.1em] mb-4">
+          60<span class="text-base">分</span> ¥1,800
+        </p>
+        <p class="text-sm text-text-muted leading-relaxed">
+          生ビール / 日本酒 / ハイボール / サワー / 果実酒 など
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center fade-in">
+      <p class="text-sm text-text-muted mb-6">ご予約・お問い合わせはお電話にて</p>
+      <a href="tel:050-8887-3987" class="btn-primary">
+        電話で予約する
+      </a>
+    </div>
+  </section>
+</Layout>

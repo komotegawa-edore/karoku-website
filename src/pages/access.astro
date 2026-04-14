@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="アクセス | 食堂 華鹿 -KAROKU-">
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="section-title">Access</p>
+      <h1 class="section-heading">アクセス</h1>
+      <div class="divider mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="px-6 pb-16">
+    <div class="max-w-4xl mx-auto fade-in">
+      <div class="aspect-video bg-bg-light border border-border">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.8!2d135.832!3d34.683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5aWI6Imv55yM5aWI6Imv5biC5LiK5LiJ5p2h55S677yX55Wq5Zyw!5e0!3m2!1sja!2sjp!4v1"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="食堂 華鹿 -KAROKU- の地図"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access Info -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Transportation -->
+        <div class="fade-in">
+          <h2 class="font-serif text-xl tracking-[0.15em] mb-2">交通アクセス</h2>
+          <div class="divider"></div>
+
+          <div class="space-y-6 mt-8">
+            <div class="flex gap-4">
+              <div class="shrink-0 w-8 h-8 border border-accent flex items-center justify-center">
+                <span class="text-accent text-xs font-serif">1</span>
+              </div>
+              <div>
+                <p class="font-serif text-sm tracking-[0.1em] mb-1">近鉄奈良駅から</p>
+                <p class="text-sm text-text-muted">6番出口より徒歩3分</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="shrink-0 w-8 h-8 border border-accent flex items-center justify-center">
+                <span class="text-accent text-xs font-serif">2</span>
+              </div>
+              <div>
+                <p class="font-serif text-sm tracking-[0.1em] mb-1">JR奈良駅から</p>
+                <p class="text-sm text-text-muted">徒歩約10分</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="shrink-0 w-8 h-8 border border-accent flex items-center justify-center">
+                <span class="text-accent text-xs font-serif">3</span>
+              </div>
+              <div>
+                <p class="font-serif text-sm tracking-[0.1em] mb-1">目印</p>
+                <p class="text-sm text-text-muted">三条通とやすらぎの道の交差点 2F<br />スクランブル交差点が一望できます</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Store Info -->
+        <div class="fade-in">
+          <h2 class="font-serif text-xl tracking-[0.15em] mb-2">店舗情報</h2>
+          <div class="divider"></div>
+
+          <div class="mt-8 space-y-4 text-sm">
+            <div class="flex border-b border-border pb-4">
+              <span class="font-serif tracking-[0.1em] w-24 shrink-0">店名</span>
+              <span class="text-text-muted">食堂 華鹿 -KAROKU-</span>
+            </div>
+            <div class="flex border-b border-border pb-4">
+              <span class="font-serif tracking-[0.1em] w-24 shrink-0">住所</span>
+              <span class="text-text-muted">〒630-8216<br />奈良県奈良市上三条町7番地<br />イノウエビル2F</span>
+            </div>
+            <div class="flex border-b border-border pb-4">
+              <span class="font-serif tracking-[0.1em] w-24 shrink-0">電話</span>
+              <a href="tel:050-8887-3987" class="text-text-muted hover:text-accent transition-colors">050-8887-3987</a>
+            </div>
+            <div class="flex border-b border-border pb-4">
+              <span class="font-serif tracking-[0.1em] w-24 shrink-0">営業時間</span>
+              <span class="text-text-muted">
+                月〜土 11:30〜14:00 / 17:00〜21:00<br />
+                日・祝 11:30〜14:00
+              </span>
+            </div>
+            <div class="flex border-b border-border pb-4">
+              <span class="font-serif tracking-[0.1em] w-24 shrink-0">定休日</span>
+              <span class="text-text-muted">不定休</span>
+            </div>
+            <div class="flex pb-4">
+              <span class="font-serif tracking-[0.1em] w-24 shrink-0">席数</span>
+              <span class="text-text-muted">22席</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 bg-bg-light">
+    <div class="max-w-4xl mx-auto text-center fade-in">
+      <p class="font-serif text-lg tracking-[0.15em] mb-6">ご来店をお待ちしております</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:050-8887-3987" class="btn-primary justify-center">
+          電話で予約
+        </a>
+        <a href="/reservation" class="btn-outline justify-center">
+          ご予約について
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

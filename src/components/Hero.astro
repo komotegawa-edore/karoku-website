@@ -1,0 +1,39 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = '食堂 華鹿',
+  subtitle = '昼は定食、夜は酒場。\n奈良の旨いもんを、気軽に。'
+} = Astro.props;
+---
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background overlay -->
+  <div class="absolute inset-0 bg-bg/60 z-10"></div>
+
+  <!-- Placeholder background pattern -->
+  <div class="absolute inset-0 bg-gradient-to-b from-bg-light/50 via-bg to-bg"></div>
+
+  <!-- Content -->
+  <div class="relative z-20 text-center px-6">
+    <p class="font-display text-sm tracking-[0.4em] text-accent mb-6 fade-in">
+      KAROKU
+    </p>
+    <h1 class="font-serif text-4xl md:text-6xl tracking-[0.2em] mb-8 fade-in">
+      {title}
+    </h1>
+    <div class="divider mx-auto fade-in"></div>
+    <p class="text-sm md:text-base text-text-muted tracking-[0.15em] leading-loose mt-8 whitespace-pre-line fade-in">
+      {subtitle}
+    </p>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
+    <span class="font-display text-xs tracking-[0.3em] text-text-muted">SCROLL</span>
+    <div class="w-px h-12 bg-gradient-to-b from-text-muted to-transparent"></div>
+  </div>
+</section>

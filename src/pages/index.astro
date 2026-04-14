@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import MenuCard from '../components/MenuCard.astro';
+---
+
+<Layout>
+  <!-- Hero -->
+  <Hero />
+
+  <!-- Concept -->
+  <section id="concept" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="section-title">Concept</p>
+        <h2 class="section-heading">こだわり</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-8 border border-border fade-in">
+          <p class="text-3xl mb-4">&#x1F33E;</p>
+          <h3 class="font-serif text-lg tracking-[0.1em] mb-4">奈良の美味しいお米</h3>
+          <p class="text-sm text-text-muted leading-relaxed">
+            奈良県産のこだわりのお米を使用。ふっくらと炊き上げたご飯は、定食の主役です。
+          </p>
+        </div>
+
+        <div class="text-center p-8 border border-border fade-in">
+          <p class="text-3xl mb-4">&#x1F376;</p>
+          <h3 class="font-serif text-lg tracking-[0.1em] mb-4">厳選の日本酒</h3>
+          <p class="text-sm text-text-muted leading-relaxed">
+            奈良の地酒を中心に、料理に合う日本酒を厳選。セルフ飲み放題で心ゆくまでお楽しみください。
+          </p>
+        </div>
+
+        <div class="text-center p-8 border border-border fade-in">
+          <p class="text-3xl mb-4">&#x1F373;</p>
+          <h3 class="font-serif text-lg tracking-[0.1em] mb-4">手作りの味</h3>
+          <p class="text-sm text-text-muted leading-relaxed">
+            チキン南蛮の自家製タルタルソース、手作りハンバーグなど、一つひとつ丁寧に仕上げています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: Self Drink -->
+  <section class="py-24 px-6 bg-bg-light">
+    <div class="max-w-4xl mx-auto text-center fade-in">
+      <p class="section-title">Self Drink</p>
+      <h2 class="section-heading mb-6">セルフ飲み放題</h2>
+      <div class="divider mx-auto"></div>
+      <p class="text-4xl font-serif text-accent mt-8 mb-2 tracking-[0.1em]">
+        60<span class="text-lg">分</span> &yen;1,800
+      </p>
+      <p class="text-sm text-text-muted leading-relaxed mt-4 max-w-lg mx-auto">
+        生ビール、日本酒、ハイボール、サワー、果実酒など豊富なラインナップ。<br />
+        お好きなタイミングで、お好きなだけお楽しみいただけます。
+      </p>
+    </div>
+  </section>
+
+  <!-- Menu Preview -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="section-title">Menu</p>
+        <h2 class="section-heading">おすすめ料理</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <MenuCard
+          name="チキン南蛮定食"
+          price="¥600〜"
+          description="自家製タルタルソースが自慢の看板メニュー"
+          tag="人気No.1"
+        />
+        <MenuCard
+          name="厚切り牛ハラミ"
+          price=""
+          description="厚切りで食べ応え抜群の牛ハラミ"
+        />
+        <MenuCard
+          name="手作りハンバーグ"
+          price="¥1,000"
+          description="ジューシーな手作りハンバーグ"
+        />
+        <MenuCard
+          name="トンネギ（豚バラ肉）"
+          price="¥800"
+          description="豚バラ肉とネギの絶妙な組み合わせ"
+        />
+      </div>
+
+      <div class="text-center mt-12 fade-in">
+        <a href="/menu" class="btn-outline">
+          メニューをすべて見る →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-24 px-6 bg-bg-light">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="section-title">Gallery</p>
+        <h2 class="section-heading">ギャラリー</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 fade-in">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div class="aspect-square bg-border/30 flex items-center justify-center">
+            <span class="text-text-muted text-xs tracking-[0.1em]">Photo {i + 1}</span>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-sm text-text-muted mt-8 fade-in">
+        ※ 写真は準備中です
+      </p>
+    </div>
+  </section>
+
+  <!-- Info -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="section-title">Information</p>
+        <h2 class="section-heading">店舗情報</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <div class="border border-border fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] border-b border-border">
+          <div class="bg-bg-light px-6 py-4 font-serif text-sm tracking-[0.1em]">住所</div>
+          <div class="px-6 py-4 text-sm text-text-muted">
+            奈良県奈良市上三条町7番地 イノウエビル2F
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] border-b border-border">
+          <div class="bg-bg-light px-6 py-4 font-serif text-sm tracking-[0.1em]">電話番号</div>
+          <div class="px-6 py-4 text-sm text-text-muted">
+            <a href="tel:050-8887-3987" class="hover:text-accent transition-colors">050-8887-3987</a>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] border-b border-border">
+          <div class="bg-bg-light px-6 py-4 font-serif text-sm tracking-[0.1em]">営業時間</div>
+          <div class="px-6 py-4 text-sm text-text-muted">
+            <p>月〜土 11:30〜14:00 / 17:00〜21:00</p>
+            <p>日・祝 11:30〜14:00</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] border-b border-border">
+          <div class="bg-bg-light px-6 py-4 font-serif text-sm tracking-[0.1em]">定休日</div>
+          <div class="px-6 py-4 text-sm text-text-muted">不定休</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[140px_1fr]">
+          <div class="bg-bg-light px-6 py-4 font-serif text-sm tracking-[0.1em]">席数</div>
+          <div class="px-6 py-4 text-sm text-text-muted">
+            22席（座敷最大10名 / テーブル席6名 / カウンター席6名）
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12 fade-in">
+        <a href="tel:050-8887-3987" class="btn-primary justify-center">
+          電話で予約
+        </a>
+        <a href="/access" class="btn-outline justify-center">
+          アクセスを見る
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
