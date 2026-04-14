@@ -18,28 +18,40 @@ import MenuCard from '../components/MenuCard.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center p-8 border border-border fade-in">
-          <p class="text-3xl mb-4">&#x1F33E;</p>
-          <h3 class="font-serif text-lg tracking-[0.1em] mb-4">奈良の美味しいお米</h3>
-          <p class="text-sm text-text-muted leading-relaxed">
-            奈良県産のこだわりのお米を使用。ふっくらと炊き上げたご飯は、定食の主役です。
-          </p>
+        <div class="border border-border fade-in overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/food/mentaiko-gohan.jpg" alt="奈良の美味しいお米" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="text-center p-8">
+            <h3 class="font-serif text-lg tracking-[0.1em] mb-4">奈良の美味しいお米</h3>
+            <p class="text-sm text-text-muted leading-relaxed">
+              奈良県産のこだわりのお米を使用。ふっくらと炊き上げたご飯は、定食の主役です。
+            </p>
+          </div>
         </div>
 
-        <div class="text-center p-8 border border-border fade-in">
-          <p class="text-3xl mb-4">&#x1F376;</p>
-          <h3 class="font-serif text-lg tracking-[0.1em] mb-4">厳選の日本酒</h3>
-          <p class="text-sm text-text-muted leading-relaxed">
-            奈良の地酒を中心に、料理に合う日本酒を厳選。セルフ飲み放題で心ゆくまでお楽しみください。
-          </p>
+        <div class="border border-border fade-in overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/drink/nara-sake.jpg" alt="厳選の日本酒" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="text-center p-8">
+            <h3 class="font-serif text-lg tracking-[0.1em] mb-4">厳選の日本酒</h3>
+            <p class="text-sm text-text-muted leading-relaxed">
+              奈良の地酒を中心に、料理に合う日本酒を厳選。セルフ飲み放題で心ゆくまでお楽しみください。
+            </p>
+          </div>
         </div>
 
-        <div class="text-center p-8 border border-border fade-in">
-          <p class="text-3xl mb-4">&#x1F373;</p>
-          <h3 class="font-serif text-lg tracking-[0.1em] mb-4">手作りの味</h3>
-          <p class="text-sm text-text-muted leading-relaxed">
-            チキン南蛮の自家製タルタルソース、手作りハンバーグなど、一つひとつ丁寧に仕上げています。
-          </p>
+        <div class="border border-border fade-in overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/food/chicken-nanban.jpg" alt="手作りの味" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="text-center p-8">
+            <h3 class="font-serif text-lg tracking-[0.1em] mb-4">手作りの味</h3>
+            <p class="text-sm text-text-muted leading-relaxed">
+              チキン南蛮の自家製タルタルソース、手作りハンバーグなど、一つひとつ丁寧に仕上げています。
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -47,17 +59,24 @@ import MenuCard from '../components/MenuCard.astro';
 
   <!-- Feature: Self Drink -->
   <section class="py-24 px-6 bg-bg-light">
-    <div class="max-w-4xl mx-auto text-center fade-in">
-      <p class="section-title">Self Drink</p>
-      <h2 class="section-heading mb-6">セルフ飲み放題</h2>
-      <div class="divider mx-auto"></div>
-      <p class="text-4xl font-serif text-accent mt-8 mb-2 tracking-[0.1em]">
-        60<span class="text-lg">分</span> &yen;1,800
-      </p>
-      <p class="text-sm text-text-muted leading-relaxed mt-4 max-w-lg mx-auto">
-        生ビール、日本酒、ハイボール、サワー、果実酒など豊富なラインナップ。<br />
-        お好きなタイミングで、お好きなだけお楽しみいただけます。
-      </p>
+    <div class="max-w-5xl mx-auto fade-in">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/images/drink/self-nomihoudai.jpg" alt="セルフ飲み放題" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="text-center md:text-left">
+          <p class="section-title">Self Drink</p>
+          <h2 class="section-heading mb-6">セルフ飲み放題</h2>
+          <div class="divider md:mx-0 mx-auto"></div>
+          <p class="text-4xl font-serif text-accent mt-8 mb-2 tracking-[0.1em]">
+            60<span class="text-lg">分</span> &yen;1,800
+          </p>
+          <p class="text-sm text-text-muted leading-relaxed mt-4">
+            生ビール、日本酒、ハイボール、サワー、果実酒など豊富なラインナップ。<br />
+            お好きなタイミングで、お好きなだけお楽しみいただけます。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -73,24 +92,29 @@ import MenuCard from '../components/MenuCard.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
         <MenuCard
           name="チキン南蛮定食"
-          price="¥600〜"
-          description="自家製タルタルソースが自慢の看板メニュー"
+          price="¥1,000"
+          description="たまごたっぷりの自家製タルタルソースが自慢の看板メニュー"
           tag="人気No.1"
+          image="/images/food/chicken-nanban-teishoku.jpg"
         />
         <MenuCard
           name="厚切り牛ハラミ"
-          price=""
-          description="厚切りで食べ応え抜群の牛ハラミ"
+          price="¥1,300"
+          description="一枚一枚、手切りにこだわった厚切りハラミ。食べ応え抜群"
+          tag="絶品"
+          image="/images/food/atsugiri-harami.jpg"
         />
         <MenuCard
           name="手作りハンバーグ"
           price="¥1,000"
-          description="ジューシーな手作りハンバーグ"
+          description="手作りにこだわったジューシーな牛肉100%ハンバーグ"
+          image="/images/food/hamburger.jpg"
         />
         <MenuCard
-          name="トンネギ（豚バラ肉）"
+          name="トンネギ"
           price="¥800"
-          description="豚バラ肉とネギの絶妙な組み合わせ"
+          description="華鹿オリジナル。豚バラ肉に鬼おろしとネギとポン酢であっさり"
+          image="/images/food/tonnegi.jpg"
         />
       </div>
 
@@ -112,15 +136,25 @@ import MenuCard from '../components/MenuCard.astro';
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 fade-in">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div class="aspect-square bg-border/30 flex items-center justify-center">
-            <span class="text-text-muted text-xs tracking-[0.1em]">Photo {i + 1}</span>
-          </div>
-        ))}
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/food/food-and-drink.jpg" alt="こだわり料理とセルフ飲み放題" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/food/chicken-nanban-2.jpg" alt="チキン南蛮" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/drink/drink-bar.jpg" alt="セルフ飲み放題ドリンクバー" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/atmosphere/zashiki.jpg" alt="座敷席" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/food/teppan-napolitan.jpg" alt="鉄板ナポリタン" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/images/drink/nihonshu.jpg" alt="日本酒" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
       </div>
-      <p class="text-center text-sm text-text-muted mt-8 fade-in">
-        ※ 写真は準備中です
-      </p>
     </div>
   </section>
 

@@ -15,134 +15,529 @@ import MenuCard from '../components/MenuCard.astro';
 
   <!-- Lunch Menu -->
   <section class="py-16 px-6">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       <div class="mb-12 fade-in">
         <h2 class="font-serif text-xl tracking-[0.15em] mb-2">ランチ定食</h2>
-        <p class="text-sm text-text-muted">11:30〜14:00</p>
+        <p class="text-sm text-text-muted">11:30〜14:00 / メインのお料理にごはん・豚汁・小鉢・お漬物付き</p>
         <div class="divider"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
         <MenuCard
           name="チキン南蛮定食"
-          price="¥600〜"
-          description="自家製タルタルソースたっぷり。ご飯・味噌汁付き"
+          price="¥1,000"
+          description="たまごたっぷりの自家製タルタルソースが自慢。一口大にカットした柔らかい鶏肉をオリジナルの南蛮酢に絡めて"
           tag="人気No.1"
+          image="/images/food/chicken-nanban-teishoku.jpg"
         />
         <MenuCard
           name="手作りハンバーグ定食"
-          price="¥1,000"
-          description="肉汁溢れるジューシーなハンバーグ。ご飯・味噌汁付き"
+          price="¥1,200"
+          description="手作りにこだわった牛肉100%のハンバーグ。赤ワインベースの自家製ソースで"
+          image="/images/food/hamburger-teishoku.jpg"
         />
         <MenuCard
-          name="トンネギ定食"
-          price="¥800"
-          description="豚バラ肉とネギの炒め物。ご飯・味噌汁付き"
+          name="厚切りハラミ定食"
+          price="¥1,500"
+          description="一枚一枚手切りにこだわった自慢の厚切りハラミ。食べ応え抜群"
+          tag="おすすめ"
+          image="/images/food/harami-teishoku.jpg"
         />
         <MenuCard
           name="やきとり定食"
-          price="¥800"
-          description="炭火で焼き上げたやきとり。ご飯・味噌汁付き"
+          price="¥1,000"
+          description="鉄板でじっくり焼き上げた今治焼鳥風。甘めのタレが食欲をそそる"
+          image="/images/food/yakitori-teishoku.jpg"
+        />
+        <MenuCard
+          name="トンネギ定食"
+          price="¥1,000"
+          description="華鹿オリジナル。豚バラ肉に鬼おろしとたっぷりのネギとポン酢で"
+          tag="大人気"
+          image="/images/food/tonnegi-teishoku.jpg"
+        />
+        <MenuCard
+          name="鶏の唐揚げ定食"
+          price="¥1,000"
+          description="定番のからあげ定食。肉大盛りもご用意"
+          tag="定番"
+          image="/images/food/karaage-teishoku.jpg"
+        />
+        <MenuCard
+          name="肉野菜炒め定食（牛バラ）"
+          price="¥1,200"
+          description="ボリューム満点、栄養満点。肉大盛りもご用意"
+          tag="大人気"
+          image="/images/food/yasai-itame-gyu-teishoku.jpg"
+        />
+        <MenuCard
+          name="肉野菜炒め定食（ウインナー）"
+          price="¥1,000"
+          description="ボリューム満点、栄養満点"
+          image="/images/food/yasai-itame-winner-teishoku.jpg"
+        />
+        <MenuCard
+          name="トンテキ定食"
+          price="¥1,200"
+          description="甘辛い自家製ソースに絡めて。にんにく不使用なのでお子様にも"
+          image="/images/food/tonteki-teishoku.jpg"
+        />
+        <MenuCard
+          name="豚の生姜焼き定食"
+          price="¥1,000"
+          description=""
+          image="/images/food/shogayaki-teishoku.jpg"
+        />
+        <MenuCard
+          name="スパイシーガーリックチキンサラダ定食"
+          price="¥1,200"
+          description="大きめのサラダにごはんと豚汁、お漬物付き"
+          image="/images/food/spicy-garlic-chicken-salad.jpg"
+        />
+        <MenuCard
+          name="焼きそば定食"
+          price="¥1,000"
+          description="関西名物。焼きそばにごはんと豚汁がつきます"
+          image="/images/food/yakisoba-teishoku.jpg"
+        />
+        <MenuCard
+          name="だし巻き玉子定食"
+          price="¥1,100"
+          description="自慢の出汁をたっぷり使っただし巻き玉子。注文後1つずつ丁寧に焼き上げます"
+          tag="1日3食限定"
+          image="/images/food/dashimaki-teishoku.jpg"
+        />
+        <MenuCard
+          name="旨辛コチュジャンスープと明太子ごはん"
+          price="¥1,100"
+          description="辛さは1辛/1.5辛/2辛の三段階から選べます"
+          tag="冬季限定"
+          image="/images/food/kochujang-soup.jpg"
         />
       </div>
+
+      <p class="text-xs text-text-muted mt-6 fade-in">
+        ※ 定食に+200円で白米から明太子ごはんに変更できます<br />
+        ※ 定食に+300円で小鉢からピーマンの肉詰めに変更できます<br />
+        ※ お昼からセルフ飲み放題もご利用いただけます
+      </p>
     </div>
   </section>
 
-  <!-- Dinner Menu -->
+  <!-- Dinner: 肉メニュー -->
   <section class="py-16 px-6 bg-bg-light">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       <div class="mb-12 fade-in">
-        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">ディナー 一品料理</h2>
-        <p class="text-sm text-text-muted">17:00〜21:00（日・祝はランチのみ）</p>
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">肉メニュー</h2>
+        <p class="text-sm text-text-muted">一品料理 / 17:00〜21:00（日・祝はランチのみ）</p>
         <div class="divider"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
         <MenuCard
           name="厚切り牛ハラミ"
-          price=""
-          description="厚切りで食べ応え抜群"
+          price="¥1,300"
+          description="一枚一枚手切りにこだわった自慢の厚切りハラミ"
+          tag="絶品"
+          image="/images/food/atsugiri-harami.jpg"
         />
         <MenuCard
           name="チキン南蛮"
-          price="¥600"
-          description="自家製タルタルソース"
-        />
-        <MenuCard
-          name="トンネギ"
           price="¥800"
-          description="豚バラ肉とネギの絶品おつまみ"
-        />
-        <MenuCard
-          name="やきとり"
-          price="¥800"
-          description="炭火焼きの香ばしいやきとり"
+          description="自家製タルタルソースたっぷり。一口サイズの国産鶏"
+          image="/images/food/chicken-nanban-2.jpg"
         />
         <MenuCard
           name="手作りハンバーグ"
           price="¥1,000"
-          description="ジューシーな手作りハンバーグ"
+          description="手作りにこだわった牛肉100%のジューシーなハンバーグ"
+          tag="こだわり"
+          image="/images/food/hamburger.jpg"
         />
         <MenuCard
-          name="ミニパフェ"
-          price=""
-          description="食後のデザートに"
+          name="やきとり"
+          price="¥800"
+          description="鉄板でじっくり焼き上げた今治焼鳥風"
+          tag="定番"
+          image="/images/food/yakitori.jpg"
+        />
+        <MenuCard
+          name="トンネギ"
+          price="¥800"
+          description="華鹿オリジナル。豚バラ肉に鬼おろしとたっぷりのネギとポン酢であっさり"
+          image="/images/food/tonnegi.jpg"
+        />
+        <MenuCard
+          name="肉野菜炒め（牛バラ）"
+          price="¥1,000"
+          description=""
+          tag="自慢の一品"
+          image="/images/food/niku-yasai-itame-gyu.jpg"
+        />
+        <MenuCard
+          name="鶏の唐揚げ"
+          price="¥800"
+          description=""
+          image="/images/food/tori-karaage.jpg"
+        />
+        <MenuCard
+          name="肉野菜炒め（ウインナー）"
+          price="¥800"
+          description=""
+          image="/images/food/niku-yasai-itame-winner.jpg"
+        />
+        <MenuCard
+          name="豚の生姜焼き"
+          price="¥800"
+          description=""
+          image="/images/food/buta-shogayaki.jpg"
         />
       </div>
     </div>
   </section>
 
-  <!-- Course Menu -->
+  <!-- 定番メニュー -->
   <section class="py-16 px-6">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">定番メニュー</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <MenuCard
+          name="ポテトサラダ"
+          price="¥500"
+          description=""
+          tag="自慢の一品"
+          image="/images/food/potato-salad.jpg"
+        />
+        <MenuCard
+          name="だし巻き玉子"
+          price="¥800"
+          description="自慢の出汁をたっぷり使用。注文後一つずつ丁寧に焼き上げます"
+          image="/images/food/dashimaki-tamago.jpg"
+        />
+        <MenuCard
+          name="サラダ"
+          price="¥400"
+          description=""
+        />
+        <MenuCard
+          name="漬物盛り合わせ"
+          price="¥500"
+          description=""
+        />
+        <MenuCard
+          name="枝豆"
+          price="¥400"
+          description=""
+        />
+        <MenuCard
+          name="フライドポテト"
+          price="¥500"
+          description=""
+          image="/images/food/fried-potato.jpg"
+        />
+        <MenuCard
+          name="山崎屋の奈良漬け（瓜）"
+          price="¥330"
+          description="スライスした瓜の奈良漬け、日本酒によく合います"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 海鮮メニュー -->
+  <section class="py-16 px-6 bg-bg-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">海鮮メニュー</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <MenuCard
+          name="たこわさ"
+          price="¥450"
+          description=""
+          image="/images/food/takowasa.jpg"
+        />
+        <MenuCard
+          name="アジフライ"
+          price="¥650"
+          description="2枚入り"
+          image="/images/food/aji-fry.jpg"
+        />
+        <MenuCard
+          name="海鮮にらチヂミ"
+          price="¥650"
+          description="4枚入り"
+          image="/images/food/kaisen-nira-chijimi.jpg"
+        />
+        <MenuCard
+          name="ムール貝の白ワイン蒸し"
+          price="¥700"
+          description=""
+        />
+        <MenuCard
+          name="スモークサーモンのマリネ"
+          price="¥500"
+          description=""
+          image="/images/food/smoke-salmon-marine.jpg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- おつまみメニュー -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">おつまみメニュー</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <MenuCard
+          name="オニオンリング"
+          price="¥500"
+          description=""
+          image="/images/food/onion-ring.jpg"
+        />
+        <MenuCard
+          name="ごぼうの唐揚げ"
+          price="¥500"
+          description=""
+          image="/images/food/gobo-karaage.jpg"
+        />
+        <MenuCard
+          name="ぽてチーズ"
+          price="¥650"
+          description="2個入り"
+          image="/images/food/pote-cheese.jpg"
+        />
+        <MenuCard
+          name="スタミナにんにく"
+          price="¥400"
+          description="にんにくのシソ醤油漬け"
+          image="/images/food/stamina-ninniku.jpg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 締め -->
+  <section class="py-16 px-6 bg-bg-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <h2 class="font-serif text-xl tracking-[0.15em] mb-2">締め</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+        <MenuCard
+          name="鉄板ナポリタン"
+          price="¥1,000"
+          description="アツアツの鉄板で最後の一口まで美味しい。昔ながらの味付けにブラックペッパーが効いてお酒にも合います"
+          image="/images/food/teppan-napolitan.jpg"
+        />
+        <MenuCard
+          name="明太子ごはん"
+          price="¥715"
+          description=""
+          image="/images/food/mentaiko-gohan.jpg"
+        />
+        <MenuCard
+          name="焼きそば"
+          price="¥880"
+          description=""
+        />
+        <MenuCard
+          name="お茶漬け"
+          price="¥500"
+          description=""
+        />
+        <MenuCard
+          name="白ごはん"
+          price="¥495"
+          description="大・中・小"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- コース -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
       <div class="mb-12 fade-in">
         <h2 class="font-serif text-xl tracking-[0.15em] mb-2">コース</h2>
-        <p class="text-sm text-text-muted">ご予約はお電話にて承ります</p>
+        <p class="text-sm text-text-muted">当日予約OK / 予約締切：来店日の当日17時まで</p>
         <div class="divider"></div>
       </div>
 
       <div class="space-y-6 fade-in">
         <MenuCard
-          name="おまかせ料理コース A"
+          name="セルフ飲み放題 60分"
+          price="¥1,800"
+          description="お一人様OK。お手軽にお酒を楽しめます。延長は30分単位で半額"
+          tag="お席+飲み放題"
+        />
+        <MenuCard
+          name="セルフ飲み放題 90分"
+          price="¥2,700"
+          description="お一人様OK。ゆっくりお酒を楽しめます"
+          tag="お席+飲み放題"
+        />
+        <MenuCard
+          name="料理おまかせコース + セルフ飲み放題"
           price="¥3,000"
-          description="料理のみのお手軽コース"
+          description="二次会や初めての方におすすめ。飲みメインのお手軽コース"
+          tag="2名様〜"
         />
         <MenuCard
-          name="おまかせ料理コース B"
+          name="料理おまかせコース + セルフ飲み放題"
           price="¥4,000"
-          description="しっかり楽しめるコース"
+          description="一番ベーシックで人気のコース。歓送迎会、女子会にも"
+          tag="一番人気 / 2名様〜"
         />
         <MenuCard
-          name="おまかせ料理コース C"
+          name="料理おまかせコース + セルフ飲み放題"
           price="¥5,000"
-          description="華鹿の味を存分に堪能できる贅沢コース"
-        />
-        <MenuCard
-          name="セルフ飲み放題付きコース"
-          price="¥4,800〜"
-          description="おまかせ料理コース + セルフ飲み放題60分付き"
-          tag="おすすめ"
+          description="お肉をいっぱい食べたい方におすすめ。ビジネスシーンにも"
+          tag="2名様〜"
         />
       </div>
+
+      <p class="text-xs text-text-muted mt-6 fade-in">
+        ※ 全コースにプレミアムセルフ飲み放題が含まれます<br />
+        ※ 席のみのご予約も承っております
+      </p>
     </div>
   </section>
 
   <!-- Drink -->
   <section class="py-16 px-6 bg-bg-light">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
       <div class="mb-12 fade-in">
         <h2 class="font-serif text-xl tracking-[0.15em] mb-2">ドリンク</h2>
         <div class="divider"></div>
       </div>
 
-      <div class="border border-border p-8 text-center fade-in">
-        <h3 class="font-serif text-lg tracking-[0.1em] mb-2">セルフ飲み放題</h3>
-        <p class="text-3xl font-serif text-accent tracking-[0.1em] mb-4">
-          60<span class="text-base">分</span> ¥1,800
-        </p>
-        <p class="text-sm text-text-muted leading-relaxed">
-          生ビール / 日本酒 / ハイボール / サワー / 果実酒 など
-        </p>
+      <!-- セルフ飲み放題 -->
+      <div class="border border-border overflow-hidden fade-in mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="aspect-[4/3] md:aspect-auto overflow-hidden">
+            <img src="/images/drink/drink-bar.jpg" alt="セルフ飲み放題ドリンクバー" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-8 flex flex-col justify-center">
+            <h3 class="font-serif text-lg tracking-[0.1em] mb-4">セルフ飲み放題</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between border-b border-border pb-2">
+                <span>プレミアム 60分</span>
+                <span class="text-accent font-display">¥1,800</span>
+              </div>
+              <div class="flex justify-between border-b border-border pb-2">
+                <span>ソフトドリンク 60分</span>
+                <span class="text-accent font-display">¥1,000</span>
+              </div>
+            </div>
+            <p class="text-xs text-text-muted mt-4 leading-relaxed">
+              延長は30分単位で半額。ラストオーダーなし。<br />
+              サーバーから自分で注ぐ新感覚の飲み放題です。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 飲み放題対象ドリンク -->
+      <div class="mb-12 fade-in">
+        <h3 class="font-serif text-base tracking-[0.1em] mb-6">飲み放題対象ドリンク</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-text-muted">
+          <div class="flex justify-between border-b border-border/50 pb-2">
+            <span>ビール</span>
+            <span>アサヒスーパードライ(生中)、キリンクラシックラガー(中瓶)、サッポロ赤星(中瓶)</span>
+          </div>
+          <div class="flex justify-between border-b border-border/50 pb-2">
+            <span>ハイボール</span>
+            <span>ブラックニッカハイボール</span>
+          </div>
+          <div class="flex justify-between border-b border-border/50 pb-2">
+            <span>サワー</span>
+            <span>生搾りレモン、カルピス、プレーン、ポン酎</span>
+          </div>
+          <div class="flex justify-between border-b border-border/50 pb-2">
+            <span>日本酒</span>
+            <span>櫛羅、みむろ杉、篠峯、春鹿 etc.</span>
+          </div>
+          <div class="flex justify-between border-b border-border/50 pb-2">
+            <span>果実酒</span>
+            <span>あらごしみかん、あらごしもも</span>
+          </div>
+          <div class="flex justify-between border-b border-border/50 pb-2">
+            <span>ソフトドリンク</span>
+            <span>ジンジャーエール、カルピス、ポンジュース、ウーロン茶、コカコーラ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 単品ドリンク -->
+      <div class="fade-in">
+        <h3 class="font-serif text-base tracking-[0.1em] mb-6">単品ドリンク</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>アサヒスーパードライ（生中）</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥550</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>瓶ビール（中瓶）<span class="text-text-muted text-xs ml-2">キリンクラシックラガー、サッポロ赤星</span></span>
+            <span class="text-accent font-display shrink-0 ml-4">¥550</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>ブラックニッカハイボール</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥500</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>レモンサワー</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥500</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>カルピスサワー</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥550</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>ウォッカサワー（プレーンサワー）</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥495</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>赤/白ワイン</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥500</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>オールフリー</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥500</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>日本酒 <span class="text-text-muted text-xs ml-2">篠峰/みむろ杉/春鹿/櫛羅 etc.</span></span>
+            <span class="text-accent font-display shrink-0 ml-4">¥550〜</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>日本酒3種飲み比べ</span>
+            <span class="text-accent font-display shrink-0 ml-4">¥900</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>果実酒 <span class="text-text-muted text-xs ml-2">あらごしみかん/あらごしもも</span></span>
+            <span class="text-accent font-display shrink-0 ml-4">¥600</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>花札焼酎 <span class="text-text-muted text-xs ml-2">萩に猪(芋)/紅葉に鹿(麦)</span></span>
+            <span class="text-accent font-display shrink-0 ml-4">¥550</span>
+          </div>
+          <div class="flex justify-between text-sm border-b border-border/50 pb-2">
+            <span>ソフトドリンク <span class="text-text-muted text-xs ml-2">コカコーラ/ジンジャーエール/ポンジュース/ウーロン茶/カルピス</span></span>
+            <span class="text-accent font-display shrink-0 ml-4">¥350</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -151,9 +546,22 @@ import MenuCard from '../components/MenuCard.astro';
   <section class="py-16 px-6">
     <div class="max-w-4xl mx-auto text-center fade-in">
       <p class="text-sm text-text-muted mb-6">ご予約・お問い合わせはお電話にて</p>
-      <a href="tel:050-8887-3987" class="btn-primary">
-        電話で予約する
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:050-8887-3987" class="btn-primary justify-center">
+          電話で予約する
+        </a>
+        <a
+          href="https://www.hotpepper.jp/strJ003671458/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline justify-center"
+        >
+          ホットペッパーで予約
+        </a>
+      </div>
+      <p class="text-xs text-text-muted mt-4">
+        ※ 定食利用限定：定食ご注文でソフトドリンク100円
+      </p>
     </div>
   </section>
 </Layout>

@@ -4,22 +4,35 @@ interface Props {
   price: string;
   description?: string;
   tag?: string;
+  image?: string;
 }
 
-const { name, price, description, tag } = Astro.props;
+const { name, price, description, tag, image } = Astro.props;
 ---
 
-<div class="group border border-border p-6 hover:border-accent/30 transition-all duration-500">
-  <div class="flex items-start justify-between mb-3">
-    <h3 class="font-serif text-lg tracking-[0.1em]">{name}</h3>
-    <span class="font-display text-accent text-sm tracking-[0.1em] shrink-0 ml-4">{price}</span>
+<div class="group border border-border hover:border-accent/30 transition-all duration-500 overflow-hidden">
+  {image && (
+    <div class="aspect-[4/3] overflow-hidden">
+      <img
+        src={image}
+        alt={name}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        loading="lazy"
+      />
+    </div>
+  )}
+  <div class="p-6">
+    <div class="flex items-start justify-between mb-3">
+      <h3 class="font-serif text-lg tracking-[0.1em]">{name}</h3>
+      <span class="font-display text-accent text-sm tracking-[0.1em] shrink-0 ml-4">{price}</span>
+    </div>
+    {tag && (
+      <span class="inline-block text-xs tracking-[0.15em] text-accent border border-accent/30 px-2 py-0.5 mb-3">
+        {tag}
+      </span>
+    )}
+    {description && (
+      <p class="text-sm text-text-muted leading-relaxed">{description}</p>
+    )}
   </div>
-  {tag && (
-    <span class="inline-block text-xs tracking-[0.15em] text-accent border border-accent/30 px-2 py-0.5 mb-3">
-      {tag}
-    </span>
-  )}
-  {description && (
-    <p class="text-sm text-text-muted leading-relaxed">{description}</p>
-  )}
 </div>
